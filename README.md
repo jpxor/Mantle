@@ -1,6 +1,14 @@
 # Mantle
 Automated build tool
 
+### Features: 
+1. simple and compact
+2. incremental builds
+3. supports multiple main functions
+4. supports cross-compilation
+5. target multiple platforms simultaneously
+6. quickly change configuration to suite your project's needs
+
 Mantle will automatically find, build, and link all source files under the src directory.	
 This builder is incremental, and will only rebuild source files that have changed	since the last build. 
 The header files are also recursively checked for changes. 
