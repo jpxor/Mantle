@@ -15,12 +15,19 @@
 	file with the entry point.
 
 	project.config and toolchain.config are assumed to be in the cwd.
+
+    Uses:
+        python mantle.py
+        python mantle.py build
+        python mantle.py clean
+        python mantle.py clean build
 """
 
 # ignore "C0103:Invalid constant name":
 # pylint: disable=invalid-name
 
 import os
+import sys
 import json
 import subprocess
 
@@ -90,6 +97,24 @@ with open("project.config", 'r') as conffile:
     tmpconf = json.loads(conffile.read())
     for key, val in tmpconf.items():
         pconf[key] = val
+
+
+
+#parse command line args
+if len(sys.argv) == 1:
+    sys.argv.append("build")
+
+# clean deletes all files matching CLEAN_EXT
+if "clean" in sys.argv:
+    for root, subdirs, files in os.walk(pconf["SRC_PATH"]):
+        for file in files:
+            name, ext = os.path.splitext(file)
+            if ext in pconf["CLEAN_EXT"]:
+                path = os.path.join(root, file)
+                print("Cleaning:", path)
+                os.remove(path)
+    if "build" not in sys.argv:
+        exit()
 
 
 
@@ -163,8 +188,7 @@ for toolchain, targets in pconf["BUILD_TARGET"].items():
 
             LINK_CMD = toolconfig["LINK_CMD"]
             LINK_CMD = LINK_CMD.replace("[BIN]", BIN)
-            LINK_CMD = LINK_CMD.replace(
-                "[LDFLAGS]", pconf["TARGETS"][target]["LDFLAGS"])
+            LINK_CMD = LINK_CMD.replace("[LDFLAGS]", pconf["TARGETS"][target]["LDFLAGS"])
             LINK_CMD = LINK_CMD.replace("[OBJ_FILES]", OBJ_FILES)
             LINK_CMD = LINK_CMD.replace("[LIBS]", LIBS)
 
