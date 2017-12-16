@@ -16,14 +16,15 @@ Automated C++ build tool
         // Building with clang and qcc for Linux, Windows, and QNX: 
             "BUILD_TARGET":{ "clang": ["linux64", "win64"], "qcc": ["qnx-x86-64", "qnx-aarch64le"] },
 
-    b. Add your project's required include directories, libraries, and build flags. These are set per target.
+    b. Add your project's required include directories, and per target libraries and build flags.
     
         "INCLUDE_DIR": [ "../src/include" ], 
         "TARGETS": { "linux64":{ "LIBS": ["GL"], "CFLAGS":"-Wall" } } 
 
 3. Build your project from the build directory
-    cd build
-    mantle.py build
+
+        cd build
+        mantle.py build
 
 ### Features: 
 - simple and compact
