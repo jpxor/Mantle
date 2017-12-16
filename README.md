@@ -1,7 +1,5 @@
 # Mantle
 Automated C++ build tool
-
-### Features: 
 - incremental builds
 - supports multiple main functions
 - simple cross-compilation
