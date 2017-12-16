@@ -1,6 +1,6 @@
 # Mantle
-Automated C++ build tool
-#### Get your projects building immediately, without the overhead of setting up and maintaining recipes and makefiles. Later, extend functionality with a few lines of python. 
+Build automation for your C++ projects
+#### Get your projects building immediately. Skip the setup and maintenance of recipes and makefiles. Later, extend functionality with a few lines of python. 
 - incremental builds
 - supports multiple main functions
 - simple cross-compilation
