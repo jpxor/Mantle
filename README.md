@@ -3,20 +3,23 @@ Automated C++ build tool
 
 ### Getting Started
 1. Clone Mantle into the root of your project directory
-    git https://github.com/jpxor/Mantle.git build
+
+        git https://github.com/jpxor/Mantle.git build
 
 2. Update the project configuration
+
     a. Select one or more toolchains and target platforms
 
-        - Building with gcc for Linux: 
+        // Building with gcc for Linux: 
             "BUILD_TARGET":{ "gcc": ["linux64"], },
 
-        - Building with clang and qcc for Linux, Windows, and QNX: 
+        // Building with clang and qcc for Linux, Windows, and QNX: 
             "BUILD_TARGET":{ "clang": ["linux64", "win64"], "qcc": ["qnx-x86-64", "qnx-aarch64le"] },
 
-    b. Add your project's required include directories, libraries, and build flags
+    b. Add your project's required include directories, libraries, and build flags. These are set per target.
+    
         "INCLUDE_DIR": [ "../src/include" ], 
-        "TARGETS": { "linux64":{ "LIBS": ["GL"] } } 
+        "TARGETS": { "linux64":{ "LIBS": ["GL"], "CFLAGS":"-Wall" } } 
 
 3. Build your project from the build directory
     cd build
