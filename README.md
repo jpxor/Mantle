@@ -1,6 +1,6 @@
 # Mantle
 Build automation for your C++ projects
-#### Get your projects building immediately. Skip the setup and maintenance of recipes and makefiles. Later, extend functionality with a few lines of python. 
+#### Get your new projects building immediately. Skip the setup and maintenance of recipes and makefiles. Later, extend functionality with a few lines of python. 
 - incremental builds
 - supports multiple main functions
 - simple cross-compilation
@@ -43,6 +43,8 @@ These files are assumed to be in the CWD when executing Mantle.
         mantle.py build
 
 
+### Is Mantle Right For You? 
+Mantle is currently intended for small to medium projects that don't require a complex dependancy graph. Future updates will have options for scaling to larger projects and build orders. 
 
 ### Project Configuration
 The configuration files use JSON format to specify key-value pairs. Smart defaults are selected to get building as soon as possible.
