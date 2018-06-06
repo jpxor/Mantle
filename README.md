@@ -1,4 +1,4 @@
-# Mantle
+# Mantle 
 Build automation for your C++ projects
 #### Get your new projects building immediately. Skip the setup and maintenance of recipes and makefiles. Later, extend functionality with a few lines of python. 
 - incremental builds
